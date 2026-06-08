@@ -47,7 +47,7 @@ const Checkout: React.FC = () => {
   const handleRazorpayPayment = async () => {
     try {
       // 1. Create order on the backend
-      const orderResponse = await fetch(`${PAYMENT_CONFIG.backend_url}/api/orders`, {
+      const orderResponse = await fetch(`${PAYMENT_CONFIG.backend_url}/api/create-order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const Checkout: React.FC = () => {
         order_id: orderDataFromBackend.id, // ✅ This is now mandatory for secure payments
         handler: async function (response: any) {
           // 2. Verify payment on the backend
-          const verifyResponse = await fetch(`${PAYMENT_CONFIG.backend_url}/api/verify`, {
+          const verifyResponse = await fetch(`${PAYMENT_CONFIG.backend_url}/api/verify-payment`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -130,6 +130,15 @@ const Checkout: React.FC = () => {
         theme: {
           color: "#15803d",
         },
+        modal: {
+          ondismiss: function () {
+            toast({
+              title: "Payment Cancelled",
+              description: "You have cancelled the payment.",
+              variant: "destructive",
+            });
+          }
+        }
       };
 
       const rzp1 = new (window as any).Razorpay(options);

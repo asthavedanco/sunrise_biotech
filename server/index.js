@@ -16,9 +16,13 @@ const razorpay = new Razorpay({
 });
 
 // Create Order Route
-app.post('/api/orders', async (req, res) => {
+app.post('/api/create-order', async (req, res) => {
     try {
         const { amount, currency, receipt } = req.body;
+
+        if (!amount || amount < 1) {
+            return res.status(400).json({ error: "Amount must be at least 1 INR" });
+        }
 
         const options = {
             amount: amount * 100, // Razorpay works in paise
@@ -29,24 +33,31 @@ app.post('/api/orders', async (req, res) => {
         const order = await razorpay.orders.create(options);
         
         if (!order) {
-            return res.status(500).send("Error creating order");
+            return res.status(500).json({ error: "Error creating order" });
         }
 
         res.json(order);
     } catch (error) {
         console.error("Order Creation Error:", error);
-        res.status(500).send(error);
+        if (error.statusCode === 401) {
+            return res.status(401).json({ error: "Razorpay Authentication Failed" });
+        }
+        res.status(500).json({ error: "Internal Server Error", details: error });
     }
 });
 
 // Verify Payment Route
-app.post('/api/verify', async (req, res) => {
+app.post('/api/verify-payment', async (req, res) => {
     try {
         const { 
             razorpay_order_id, 
             razorpay_payment_id, 
             razorpay_signature 
         } = req.body;
+
+        if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
+            return res.status(400).json({ success: false, message: "Missing required fields" });
+        }
 
         const sign = razorpay_order_id + "|" + razorpay_payment_id;
         const expectedSign = crypto
@@ -69,7 +80,7 @@ app.post('/api/verify', async (req, res) => {
         }
     } catch (error) {
         console.error("Verification Error:", error);
-        res.status(500).send(error);
+        res.status(500).json({ error: "Internal Server Error", details: error });
     }
 });
 

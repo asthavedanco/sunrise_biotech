@@ -5,8 +5,8 @@ export const PAYMENT_CONFIG = {
   // Backend API URL (Update this in production)
   backend_url: "http://localhost:3001",
   
-  // Razorpay Key ID (Replace with your actual Live Key ID from Razorpay Dashboard)
-  razorpay_key_id: "rzp_test_YourKeyIDHere", // Currently using test key placeholder
+  // Razorpay Key ID
+  razorpay_key_id: import.meta.env.VITE_RAZORPAY_KEY_ID,
   
   company_name: "Sunrise Biotech",
   description: "Payment for Natural Health Products",
