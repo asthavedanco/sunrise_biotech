@@ -84,11 +84,11 @@ VITE_STRIPE_PUBLISHABLE_KEY=pk_test_YOUR_KEY_HERE
 | Product                  | Price |
 | ------------------------ | ----- |
 | Premium Spirulina Powder | ₹899  |
-| Spirulina Tablets        | ₹799  |
-| Spirulina Mother Culture | ₹1499 |
+| Spirulina Tablets        | ₹199  |
+| Spirulina Mother Culture | ₹300  |
 | Moringa Powder   | ₹649  |
 | Moringa Dry Leaves       | ₹449  |
-| Moringa Tablets          | ₹599  |
+| Moringa Tablets          | ₹149  |
 
 ## Current Status
 

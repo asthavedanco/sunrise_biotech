@@ -39,13 +39,68 @@ export const products: Product[] = [
       "Boosts Immunity",
       "Natural Energy",
     ],
+    fssai: "10725998000370",
+    variants: [
+      {
+        weight: "200g",
+        price: 299,
+        image: "/images/spirulina-powder.jpg",
+        images: ["/images/spirulina-powder.jpg"],
+        dosage: [
+          "1 teaspoon (3g) daily",
+          "Mix with water, juice or smoothies",
+          "Maintain consistency for best effects"
+        ],
+        safetyInfo: [
+          "Not recommended for pregnant or lactating women.",
+          "Individuals with medical conditions should consult a physician.",
+          "This product is not intended to diagnose, treat, cure, or prevent any disease."
+        ],
+        storage: [
+          "Store in a cool, dry place away from sunlight.",
+          "Keep container tightly closed."
+        ],
+        specifications: {
+          "Batch No": "SP - 001",
+          "Mfg Date": "March 2026",
+          "Exp Date": "Feb 2028",
+          "MRP": "₹299.00"
+        }
+      },
+      {
+        weight: "500g",
+        price: 599,
+        image: "/images/spirulina-powder.jpg",
+        images: ["/images/spirulina-powder.jpg"],
+        dosage: [
+          "1 teaspoon (3g) daily",
+          "Mix with water, juice or smoothies",
+          "Maintain consistency for best effects"
+        ],
+        safetyInfo: [
+          "Not recommended for pregnant or lactating women.",
+          "Individuals with medical conditions should consult a physician.",
+          "This product is not intended to diagnose, treat, cure, or prevent any disease."
+        ],
+        storage: [
+          "Store in a cool, dry place away from sunlight.",
+          "Keep container tightly closed."
+        ],
+        specifications: {
+          "Batch No": "SP - 001",
+          "Mfg Date": "March 2026",
+          "Exp Date": "Feb 2028",
+          "MRP": "₹599.00"
+        }
+      }
+    ]
   },
   {
     id: "2",
     name: "Spirulina Tablets",
     description:
       "Convenient spirulina tablets for daily nutrition. Easy to consume and perfect for busy lifestyles.",
-    price: 799,
+    price: 199,
     image: "/images/spirulina-tablets.jpeg",
     category: "Spirulina",
     benefits: [
@@ -75,7 +130,7 @@ export const products: Product[] = [
     name: "Spirulina Mother Culture",
     description:
       "Live spirulina culture for growing your own fresh spirulina at home. Includes growing instructions.",
-    price: 1499,
+    price: 300,
     image: "/images/spirulina-culture.jpg",
     category: "Spirulina",
     benefits: ["Fresh Harvest", "Cost Effective", "Educational", "Sustainable"],
@@ -178,7 +233,7 @@ export const products: Product[] = [
     name: "Moringa Tablets",
     description:
       "Concentrated moringa tablets providing all the benefits of moringa in convenient tablet form.",
-    price: 599,
+    price: 149,
     image: "/images/moringa-tablets.jpeg",
     category: "Moringa",
     benefits: [
