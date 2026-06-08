@@ -223,7 +223,7 @@ export const products: Product[] = [
     name: "Moringa Dry Leaves",
     description:
       "Naturally dried moringa leaves perfect for teas and cooking. Retains all natural nutrients.",
-    price: 449,
+    price: 120,
     image: "/images/moringa-leaves.jpg",
     category: "Moringa",
     benefits: ["Natural Tea", "Cooking Ingredient", "Vitamin Rich", "Natural"],

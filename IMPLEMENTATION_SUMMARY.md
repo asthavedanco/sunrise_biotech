@@ -15,7 +15,7 @@
   - Spirulina Tablets: ₹199
   - Spirulina Mother Culture: ₹300
   - Moringa Powder: ₹649
-  - Moringa Dry Leaves: ₹449
+  - Moringa Dry Leaves: ₹120
   - Moringa Tablets: ₹149
 
 ### 3. **Cart System Enhanced**
